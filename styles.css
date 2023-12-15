@@ -1,0 +1,180 @@
+/* styles.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1f1f1f;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#task-list {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.task-column {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+h2 {
+    color: #61dafb;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    min-height: 100px;
+}
+
+.task {
+    background-color: #404040;
+    border: 1px solid #333;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column; /* Updated to column layout */
+    justify-content: space-between;
+    align-items: flex-start; /* Align text to the start (left) */
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    overflow-wrap: break-word; /* Enable word wrapping */
+    word-wrap: break-word; /* Fallback for older browsers */
+}
+
+.task button {
+    background-color: #ff6666;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 5px; /* Add margin between buttons and text */
+}
+
+#new-task-form {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#new-task-input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    resize: none; /* Prevent textarea resizing */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#buttons {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out 0.5s forwards;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #292929;
+    color: #fff;
+}
+
+.dark-mode #task-list {
+    background-color: #1f1f1f;
+}
+
+.dark-mode .task-column {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .task {
+    background-color: #404040;
+    border: 1px solid #333;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Dark mode switch styles */
+.dark-mode-switch {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.dark-mode-label {
+    margin-left: 10px;
+}

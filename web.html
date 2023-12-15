@@ -1,0 +1,57 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+
+<div id="task-list">
+    <div class="task-column" id="not-complete-column">
+        <h2>Not Complete</h2>
+        <ul class="task-list" id="not-complete-list">
+            <!-- Tasks will be dynamically added here -->
+        </ul>
+    </div>
+
+    <div class="task-column" id="in-progress-column">
+        <h2>In Progress</h2>
+        <ul class="task-list" id="in-progress-list">
+            <!-- Tasks will be dynamically added here -->
+        </ul>
+    </div>
+
+    <div class="task-column" id="completed-column">
+        <h2>Completed</h2>
+        <ul class="task-list" id="completed-list">
+            <!-- Tasks will be dynamically added here -->
+        </ul>
+    </div>
+</div>
+
+<div id="new-task-form">
+    <textarea id="new-task-input" placeholder="New Task..."></textarea>
+    <button onclick="addNewTask()">Add Task</button>
+</div>
+
+<div id="buttons">
+    <div class="dark-mode-switch">
+        <label class="switch">
+            <input type="checkbox" onclick="toggleDarkMode()" checked>
+            <span class="slider"></span>
+        </label>
+        <span class="dark-mode-label">Dark Mode</span>
+    </div>
+    <button class="reset-button" onclick="resetAllData()">Reset All Data</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="scripts.js"></script>
+
+</body>
+</html>
